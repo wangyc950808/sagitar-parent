@@ -20,6 +20,8 @@
         <fastjosn.version>1.2.58</fastjosn.version>
         <lombok.version>1.18.12</lombok.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
+        <spring.cloud.alibaba.version>2.2.5.RELEASE</spring.cloud.alibaba.version>
+        <spring.cloud-version>Hoxton.SR10</spring.cloud-version>
     </properties>
 
     <repositories>
@@ -68,6 +70,26 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- spring cloud -->
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
+                <type>pom</type>
+                <scope>runtime</scope>
+            </dependency>
+
+
+            <!-- alibaba cloud -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- mysql -->
 
             <!-- mongo -->
@@ -101,6 +123,19 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!-- springBootStarter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- lombok -->
         <dependency>
